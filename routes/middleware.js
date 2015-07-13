@@ -26,11 +26,11 @@ exports.initLocals = function(req, res, next) {
   var locals = res.locals;
 
   locals.navLinks = [
-    { label: 'Inicio',               key: 'home',    href: '/' },
-    { label: 'Quienes somos',        key: 'blog',    href: '/blog' },
-    { label: 'Productos',            key: 'blog',    href: '/blog' },
-    { label: 'Alergia Respiratoria', key: 'gallery', href: '/gallery' },
-    { label: 'Contáctenos',          key: 'contact', href: '/contact' }
+    { label: 'Inicio',               key: 'home',                href: '/'                     },
+    { label: 'Quienes somos',        key: 'about-us',            href: '/quienes-somos'        },
+    { label: 'Productos',            key: 'products',            href: '/productos'            },
+    { label: 'Alergia Respiratoria', key: 'respiratory-allergy', href: '/alergia-respiratoria' },
+    { label: 'Contáctenos',          key: 'contact',             href: '/contacto'             }
   ];
 
   locals.user = req.user;
