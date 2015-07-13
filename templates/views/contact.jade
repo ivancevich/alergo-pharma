@@ -1,28 +1,28 @@
 extends ../layouts/default
 
 block intro
-	.container
-		h1 Contáctenos
-		
+  .container
+    h1 Contáctenos
+    
 block content
-	.container
-		if enquirySubmitted
-			h3 Gracias por enviarnos su mensaje.
-		else
-			.row: .col-sm-8.col-md-6
-				form(method='post')
-					input(type='hidden', name='action', value='contact')
-					.form-group(class=validationErrors.name ? 'has-error' : null)
-						label Nombre
-						input(type='text', name='name.full', value=formData['name.full']).form-control
-					.form-group(class=validationErrors.email ? 'has-error' : null)
-						label Email
-						input(type='email', name='email', value=formData.email).form-control
-					.form-group
-						label Teléfono
-						input(type='text', name='phone', value=formData.phone, placeholder='(opcional)').form-control
-					.form-group(class=validationErrors.message ? 'has-error' : null)
-						label Mensaje
-						textarea(name='message', placeholder='Escriba su mensaje aquí...' rows=4).form-control= formData.message
-					.form-actions
-						button(type='submit').btn.btn-primary Enviar
+  .container
+    if enquirySubmitted
+      h3 Gracias por enviarnos su mensaje.
+    else
+      .row: .col-sm-8.col-md-6
+        form(method='post')
+          input(type='hidden', name='action', value='contact')
+          .form-group(class=validationErrors.name ? 'has-error' : null)
+            label Nombre
+            input(type='text', name='name.full', value=formData['name.full']).form-control
+          .form-group(class=validationErrors.email ? 'has-error' : null)
+            label Email
+            input(type='email', name='email', value=formData.email).form-control
+          .form-group
+            label Teléfono
+            input(type='text', name='phone', value=formData.phone, placeholder='(opcional)').form-control
+          .form-group(class=validationErrors.message ? 'has-error' : null)
+            label Mensaje
+            textarea(name='message', placeholder='Escriba su mensaje aquí...' rows=4).form-control= formData.message
+          .form-actions
+            button(type='submit').btn.btn-primary Enviar
