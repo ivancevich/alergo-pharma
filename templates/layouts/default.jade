@@ -1,4 +1,5 @@
 include ../mixins/flash-messages
+include ../mixins/logo
 
 doctype html
 html
@@ -48,6 +49,7 @@ html
               span.icon-bar
               span.icon-bar
             a.navbar-brand(href='/', title='Alergo Pharma')
+              +logo
               h1 Alergo Pharma
           .collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
@@ -76,6 +78,7 @@ html
     .container: #footer
       .col-md-12
         a.brand(href='/', title='Alergo Pharma')
+          +logo
 
     //- JAVASCRIPT
 
