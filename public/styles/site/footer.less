@@ -5,20 +5,22 @@
   color: @gray-light;
   text-align: center;
 
-  .no-svg .brand {
-    background-image: url('/images/alergo-pharma-grey.png');
-    background-size: 150px;
-    background-position: 0;
-    background-repeat: no-repeat;
-  }
-
   .brand {
-    width: 150px;
-    height: 50px;
     display: inline-block;
+    margin-bottom: 20px;
 
-    svg #Group {
-      fill: @gray-light;
+    svg {
+      width: 120px;
+
+      #Group {
+        fill: @gray-light;
+      }
     }
   }
+}
+
+.no-svg #footer .brand {
+  background-image: url('/images/alergo-pharma-grey.png');
+  background-size: 120px;
+  background-repeat: no-repeat;
 }

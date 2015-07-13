@@ -13,18 +13,15 @@
     background-color: transparent;
     border: none;
 
-    .no-svg .navbar-brand {
-      background-image: url('/images/alergo-pharma-white.png');
-      background-size: 150px;
-      background-position: 0;
-      background-repeat: no-repeat;
-    }
-
     .navbar-brand {
       width: 150px;
 
-      svg #Group {
-        fill: white;
+      svg {
+        width: 120px;
+
+        #Group {
+          fill: white;
+        }
       }
 
       h1 {
@@ -49,4 +46,11 @@
       }
     }
   }
+}
+
+.no-svg #header .navbar-brand {
+  background-image: url('/images/alergo-pharma-white.png');
+  background-size: 120px;
+  background-position: 15px 15px;
+  background-repeat: no-repeat;
 }
