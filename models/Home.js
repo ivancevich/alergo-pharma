@@ -10,8 +10,7 @@ var Types = keystone.Field.Types;
 
 var Home = new keystone.List('Home', {
   nocreate: true,
-  nodelete: true,
-  map: { name: 'title' }
+  nodelete: true
 });
 
 Home.add({
