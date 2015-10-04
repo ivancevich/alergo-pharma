@@ -54,6 +54,10 @@
 
     .link {
       height: 210px;
+
+      @media (max-width: @screen-xs-max) {
+        margin-bottom: 20px;
+      }
     }
 
     .link:before {
@@ -71,14 +75,26 @@
 
     .stallergenes {
       text-align: left;
+
+      @media (max-width: @screen-xs-max) {
+        text-align: center;
+      }
     }
 
     .descubriendo-la-alergia {
       text-align: center;
+
+      @media (max-width: @screen-xs-max) {
+        text-align: center;
+      }
     }
 
     .fundaler {
       text-align: right;
+
+      @media (max-width: @screen-xs-max) {
+        text-align: center;
+      }
     }
   }
 }
