@@ -5,9 +5,26 @@
   color: @gray-light;
   text-align: center;
 
+  .phones {
+    text-align: left;
+    
+    @media (max-width: @screen-md) {
+      text-align: center;
+    }
+  }
+
+  .address {
+    text-align: right;
+
+    @media (max-width: @screen-md) {
+      text-align: center;
+    }
+  }
+
   .brand {
     display: inline-block;
     margin-bottom: 20px;
+    margin-top: -5px;
 
     svg {
       width: 120px;
@@ -15,6 +32,10 @@
       #Group {
         fill: @gray-light;
       }
+    }
+
+    @media (max-width: @screen-md) {
+      margin-top: 10px;
     }
   }
 }
