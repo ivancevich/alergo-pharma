@@ -8,7 +8,7 @@ exports = module.exports = function (req, res) {
   var locals = res.locals;
 
   locals.section = 'about-us';
-  locals.title = 'Alergo Pharma - Quienes Somos';
+  locals.title = 'Alergo Pharma - Quiénes Somos';
 
   view.render('about-us');
 

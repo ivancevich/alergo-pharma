@@ -27,7 +27,7 @@ exports.initLocals = function(req, res, next) {
 
   locals.navLinks = [
     { label: 'Inicio',               key: 'home',                href: '/'                     },
-    { label: 'Quienes somos',        key: 'about-us',            href: '/quienes-somos'        },
+    { label: 'Quiénes somos',        key: 'about-us',            href: '/quienes-somos'        },
     { label: 'Productos',            key: 'products',            href: '/productos'            },
     { label: 'Alergia Respiratoria', key: 'respiratory-allergy', href: '/alergia-respiratoria' },
     { label: 'Contáctenos',          key: 'contact',             href: '/contacto'             }
