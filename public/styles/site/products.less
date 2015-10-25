@@ -1,0 +1,15 @@
+.products {
+  img {
+    width: 100%;
+    max-width: 750px;
+  }
+  .vacunas-orales, .vacunas-inyectables {
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: grey;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
