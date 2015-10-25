@@ -1,0 +1,24 @@
+.about-us {
+  margin-top: 20px;
+
+  p {
+    font-size: @_ap-paragraph;
+
+    strong {
+      color: @ap-black;
+      font-size: @_ap-paragraph + 1;
+    }
+  }
+  
+  .heading {
+    font-size: @_ap-paragraph-big;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: grey;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}
