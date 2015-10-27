@@ -15,11 +15,7 @@ var Home = new keystone.List('Home', {
 
 Home.add({
   title: { type: String, required: true, initial: true },
-  subtitle: { type: String, required: true, initial: true },
-  description: {
-    title: { type: String, required: true, initial: true },
-    text: { type: Types.Html, wysiwyg: true, height: 400, required: true, initial: true }
-  }
+  subtitle: { type: String, required: true, initial: true }
 });
 
 Home.defaultColumns = 'title';
