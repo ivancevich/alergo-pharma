@@ -1,6 +1,8 @@
+- var fullName = enquiry.name.first + (enquiry.name.last ? (' ' + enquiry.name.last) : '')
+
 h3 Consulta desde la web de Alergo-Pharma:
 
-p Nombre: #{enquiry.name.first}
+p Nombre: #{fullName}
 p Email: #{enquiry.email}
 p Teléfono: #{enquiry.phone}
 p Mensaje: #{enquiry.message.md}

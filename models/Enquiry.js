@@ -37,7 +37,7 @@ Enquiry.schema.methods.sendEmail = function() {
         tags: 'Enquiry',
         to: admins,
         from: {
-          name: enquiry.name.first,
+          name: enquiry.name.first + (enquiry.name.last ? (' ' + enquiry.name.last) : ''),
           email: enquiry.email
         },
         enquiry: enquiry
