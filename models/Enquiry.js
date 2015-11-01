@@ -23,4 +23,30 @@ Enquiry.add({
 
 Enquiry.defaultSort = '-createdAt';
 Enquiry.defaultColumns = 'name, email, createdAt';
+
+Enquiry.schema.methods.sendEmail = function() {
+  var enquiry = this;
+
+  keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
+    if (err) return console.error('Error getting admins', err);
+
+    var Email = new keystone.Email('enquiry-notification');
+
+    Email.send({
+        subject: 'Consulta desde la web de Alergo-Pharma',
+        tags: 'Enquiry',
+        to: admins,
+        from: {
+          name: enquiry.name.first + ' ' + enquiry.name.last,
+          email: enquiry.email
+        },
+        enquiry: enquiry
+    }, function (err, info) {
+      if (err) {
+        console.error('Error sending enquiry email', err);
+      }
+    });
+  });
+};
+
 Enquiry.register();

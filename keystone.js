@@ -22,6 +22,8 @@ keystone.init({
   'views': 'templates/views',
   'view engine': 'jade',
 
+  'emails': 'templates/emails',
+
   'auto update': true,
   'session': true,
   'auth': true,
