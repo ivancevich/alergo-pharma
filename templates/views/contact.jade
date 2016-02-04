@@ -10,7 +10,7 @@ block content
       h3 Gracias por enviarnos su mensaje.
     else
       .row: .col-sm-8.col-md-6
-        form(method='post')
+        form(method='post', enctype='multipart/form-data')
           input(type='hidden', name='action', value='contact')
           .form-group(class=validationErrors.name ? 'has-error' : null)
             label Nombre
@@ -19,8 +19,11 @@ block content
             label Email
             input(type='email', name='email', value=formData.email).form-control
           .form-group
-            label Teléfono
+            label Teléfono (opcional)
             input(type='text', name='phone', value=formData.phone, placeholder='(opcional)').form-control
+          .form-group
+            label Prescripción Médica (opcional)
+            input(type='file', name='prescription', value=formData.prescription).form-control
           .form-group(class=validationErrors.message ? 'has-error' : null)
             label Mensaje
             textarea(name='message', placeholder='Escriba su mensaje aquí...' rows=4).form-control= formData.message
