@@ -27,13 +27,13 @@ Enquiry.add({
 Enquiry.defaultSort = '-createdAt';
 Enquiry.defaultColumns = 'name, email, createdAt';
 
-Enquiry.schema.methods.sendEmail = function() {
+Enquiry.schema.methods.sendEmail = function () {
   var enquiry = this;
 
   keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
     if (err) return console.error('Error getting admins', err);
 
-    getPrescription(enquiry, function(err, prescription) {
+    getPrescription(enquiry, function (prescription) {
       var Email = new keystone.Email('enquiry-notification');
       var attachments = [];
 
@@ -63,20 +63,21 @@ Enquiry.schema.methods.sendEmail = function() {
 
 Enquiry.register();
 
-function getPrescription(enquiry, callback) {
+function getPrescription (enquiry, callback) {
   if (!enquiry.prescription) {
     return callback();
   }
 
   fs.readFile(enquiry.prescription, 'base64', function (err, data) {
     if (err) {
-      return callback(err);
+      console.error(err);
+      return callback();
     }
 
     var buffer = readChunk.sync(enquiry.prescription, 0, 262);
     var type = fileType(buffer) || {};
 
-    callback(null, {
+    callback({
       type: type.mime,
       name: 'prescripcion.' + type.ext,
       content: data,
